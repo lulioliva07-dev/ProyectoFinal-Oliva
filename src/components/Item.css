@@ -1,0 +1,51 @@
+/* Contenedor de la tarjeta */
+.item-card {
+  background: #8f8484;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  margin: 1rem auto;
+}
+
+.item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Título */
+.item-card .item-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f39ae0;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Imagen */
+
+.item-card-img {
+  border-radius: 12px;
+  object-fit: cover;   /* Recorta la imagen si sobra */
+  width: 100%;         /* Respeta el ancho de la tarjeta */
+  height: 300px;       /* 🔥 alto fijo (ajustá a gusto: 200px, 250px, etc.) */
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+
+.item-card:hover .item-card-img {
+  transform: scale(1.05);
+}
+
+/* Precio */
+.item-card-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f39ae0;
+  margin-top: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}

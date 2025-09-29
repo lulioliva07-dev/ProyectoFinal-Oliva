@@ -1,0 +1,14 @@
+/* Contenedor general de la lista */
+.item-list-container {
+  margin-top: 5rem;   /* 🔥 separa del nav */
+  text-align: center; /* centra los títulos */
+  padding: 1rem;
+}
+
+/* Contenedor de las tarjetas */
+.item-list {
+  display: flex;         /* coloca los productos en fila */
+  flex-wrap: wrap;       /* permite que bajen si no entran */
+  justify-content: center; /* centra horizontalmente */
+  gap: 2rem;             /* espacio entre tarjetas */
+}
