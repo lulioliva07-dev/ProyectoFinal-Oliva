@@ -1,12 +1,14 @@
 //import products from "../data/products"
-import Item from "./Item";
-import getMockAPIData, { getProductsByCateg } from "../data/mockAPI";
+import Item from "../ItemListContainer/Item";
+import { getProducts, getProductsByCateg } from "../../data/firebase";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import './ItemListContainer.css'
+import "../../styles/Item.css";
+
+
 
 export default function ItemListContainer({greeting}){
-    //1. useState para guardar el listado de items
+    
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
     const {categParam} = useParams();
@@ -14,16 +16,16 @@ export default function ItemListContainer({greeting}){
 
     useEffect( () => {
     setIsLoading(true)
-    //2. useEffect para controlar la peticion de datos a la API (mockAPI)
+    
         if (categParam){
             getProductsByCateg(categParam)
             .then(productsByCateg  => setProducts(productsByCateg))
             .catch(error => alert(error))
             .finally( () => setIsLoading(false))
         }
-        //3. fetch o solicitud simulada / montaje
+        
         else{
-        getMockAPIData()
+        getProducts()
         .then( (productList) => {
             console.log("Promesa terminada")
             setProducts(productList);
@@ -36,34 +38,30 @@ export default function ItemListContainer({greeting}){
             console.log("Esto se ejecuta siempre")
             setIsLoading(false)
         })
-        /*Promise.then() cuando la promesa se cumpla*/
-        /*Promise.catch() cuando la promesa rechaza (error)*/
         }
     }, [categParam])
 
     
     return(
         <div className="item-list-container">
-            <h2>{greeting}</h2>
-            {/*renderizado condicional*/}
+        <div>
+            <div>
+            <h2 className="item-list-container-title">{greeting}</h2>
+            
             { isLoading 
                ? <p className="item-list-container__loading">Cargando...</p> 
                : ""
             }
-            <h4>Nuestros productos</h4>
+            <h4 className="item-list-container">Productos premium en tecnología</h4>
             <div className="item-list">
             
             {
-                products.map(
-                    item => <Item key={item.id} {...item}/>
-                    //spread
-                )
+                products.map(item => <Item key={item.id} {...item}/>)
             }
             </div>
+            </div>
+        </div>
         </div>
     )
 }
 
-
-//abirmos llaves dentro del jsx para meter jsript 
-// luego si ingreso jsx dentro de js abro llaves de nuevo

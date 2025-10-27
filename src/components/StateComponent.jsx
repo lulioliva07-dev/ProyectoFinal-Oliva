@@ -6,12 +6,11 @@ export default function StateComponent(){
 
 
     useEffect( ()=>{
-    /*tarea complejas o delicadas
-    Tareas de montaje*/
+    
     console.warn("🛑Tarea compleja - conexión a Base de Datos")
     console.warn("🟨Acceso al DOM")
     }, [] )
-    //[]=> tareas a ejecutar solo en el montaje 
+ 
 
     return(
         <div>
@@ -19,9 +18,9 @@ export default function StateComponent(){
                 <span style={{display: "inline-block", width: "12px", height:"12px", backgroundColor: color}}></span>
             </p>
 
-            <button onClick={ () => setColor("#000000")}>Negro</button>
-            <button onClick={ () => setColor("#3972f5ff")}>Azul</button>
-            <button onClick={ () => setColor("#ea0f0fff")}>Rojo</button>
+            <button className="item-card-button" onClick={ () => setColor("#000000")}>Negro</button>
+            <button className="item-card-button" onClick={ () => setColor("#3972f5ff")}>Azul</button>
+            <button className="item-card-button" onClick={ () => setColor("#ea0f0fff")}>Rojo</button>
         </div>
     )
 }

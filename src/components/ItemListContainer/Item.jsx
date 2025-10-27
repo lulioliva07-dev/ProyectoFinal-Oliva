@@ -1,8 +1,8 @@
-//import ButtonAddToCart from './ButtonAddToCart';
 import { Link } from 'react-router';
-import './Item.css'
-import StateComponent from './StateComponent';
-//componentes Nombre en mayuscula
+import StateComponent from '../StateComponent';
+import "../../styles/Item.css";
+
+
 
 export default function Item( {id, title, img, price} ){
 
@@ -27,13 +27,3 @@ export default function Item( {id, title, img, price} ){
         </section>
     )
 }
-
-//<ButtonAddToCart/>
-
-//componentes retornan JSX/HTML
-    //const title = "Remera Negra JS";
-    //const price = 400;
-    //console.log("Renderizamos Item - Props:", title, img, price);
-
-    //destruturacion destructuring
-    //const {title, img, price} = props;

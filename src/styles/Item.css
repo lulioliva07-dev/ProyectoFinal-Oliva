@@ -1,0 +1,148 @@
+/* === Contenedor general de las cards === */
+.item-list-container {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #f1fad2;
+  padding: 3rem 1rem;
+}
+
+.item-list-container-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #8c52ff;
+  margin-bottom: 1rem;
+}
+
+/* === Subtítulo elegante debajo del saludo === */
+.item-list-container h4 {
+  font-size: 1.3rem;
+  color: #05020c;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Línea decorativa debajo del texto */
+.item-list-container h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, #7fa7f3, #8c52ff);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+/* Efecto hover suave */
+.item-list-container h4:hover::after {
+  width: 100%;
+}
+
+
+/* === Grid de productos === */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* === CARD DE PRODUCTO === */
+.item-card {
+  background-color: #9685eb;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === Imagen del producto === */
+.item-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover .item-card-img {
+  transform: scale(1.05);
+}
+
+/* === Título y precio === */
+.item-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 1rem;
+}
+
+.item-card-price {
+  color: #f1fad2;
+  font-weight: 500;
+  margin: 0.5rem 0 1rem 0;
+}
+
+/* === Botón "Ir a ver detalle" === */
+.item-card button {
+  background-color: #f1fad2;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item-card button:hover {
+  background-color: #c0b9e6;
+}
+
+/* === Estado o componente adicional === */
+.item-card .state-component {
+  margin-bottom: 1rem;
+}
+
+/* === Estrellas (similares al ejemplo visual) === */
+.item-card .stars {
+  color: #f6b400;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* === Responsive ajustes === */
+@media (max-width: 768px) {
+  .item-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .item-card {
+    padding: 1rem;
+  }
+
+  .item-card-img {
+    height: 200px;
+  }
+
+  .item-card-title {
+    font-size: 1rem;
+  }
+}

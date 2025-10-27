@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import CartWidget from "./CartWidget";
-import "./NavBar.css";
-import logo from "../assets/img/logo.jpg";
+import logo from "../../assets/img/logo.jpg"
+import "../../styles/NavBar.css";
 
 
 
@@ -10,15 +10,18 @@ export default function NavBar (){
     return (
 
     
-    <nav className="nav-bar">
-        <Link to="/">
-            <div className="logo-container">
-                <img src={logo} alt="Logo de la tienda" className="logo" />
-            </div>
+<nav className="navbar">
+
+<div className="navbar__container">
+        <Link to="/" className="navbar__logo">
+            
+            <img src={logo} alt="Logo de la tienda" className="logo" />
+            
+
         </Link>
 
 
-        <ul className="nav-links">
+        <ul className="navbar__links">
             <li>
                 <Link to="/category/fundas">
                 Fundas
@@ -34,17 +37,15 @@ export default function NavBar (){
                 Soportes
                 </Link>
             </li>
-            <li>
-                <Link to="/category/ads">
-                Accesorios
-                </Link>
-            </li>
+
         </ul>
 
-        <Link to="/cart">
-           <span> <CartWidget/> </span>
+        <Link to="/cart" className="navbar__cart">
+          <CartWidget />
         </Link>
-    </nav>
+
+</div>
+        
+</nav>
     
-    )
-}
+)}

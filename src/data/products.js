@@ -1,4 +1,4 @@
-//array de objetos
+
 
 const products = [
   {
@@ -106,7 +106,7 @@ const products = [
     img: "https://http2.mlstatic.com/D_NQ_NP_933457-MLU76244160505_052024-O.webp",
     description: "Carga iPhone, Apple Watch y AirPods simultáneamente.",
     price: 79.99,
-    stock: 18,
+    stock: 2,
     category: "cargadores"
   },
   {
@@ -184,15 +184,3 @@ const products = [
 ];
 
 export default products;
-
-
-
-//[10,20,35].forEach((elem) => {
-    //console.log(elem)})
-//< o >
-
-//genera un nuevo array en base a un array inicial
-
-//[2,4,6].map(function(elem){
-//return elem * elem 
-//})

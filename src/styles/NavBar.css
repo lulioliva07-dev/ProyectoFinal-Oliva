@@ -1,0 +1,92 @@
+/* === Navbar general === */
+.navbar {
+  width: 100%;
+  background-color: #f1fad2;
+  border-bottom: 1px solid #9685eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === Contenedor interno === */
+.navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* === Logo === */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-weight: 600;
+  color: #222;
+  font-size: 1.1rem;
+}
+
+/* === Links === */
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar__links a:hover {
+  color: #8c52ff;
+}
+
+/* === Icono de carrito === */
+.navbar__cart {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .navbar__links a {
+    font-size: 1rem;
+  }
+
+  .navbar__cart {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+}

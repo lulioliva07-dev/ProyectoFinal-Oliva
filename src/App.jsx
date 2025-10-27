@@ -1,19 +1,22 @@
-import './App.css'
-import ItemDetailContainer from './components/ItemDetailContainer';
-import ItemListContainer from './components/ItemListContainer'
-import NavBar from './Components/NavBar'
-import { BrowserRouter, Routes, Route } from 'react-router';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
+import { BrowserRouter, Routes, Route  } from 'react-router';
+import { CartProvider } from './context/cartContext';
+import CartContainter from './components/Cart/CartContainer';
+import app, { getProducts } from '../src/data/firebase';
+import CartContainer from "./components/Cart/CartContainer";
 
-
-//1. browserRouter como comp padre
-//2. definir el area donde vamos a navegar con routes
-//3. crear rutas como route definiendo el path (url) y el contenido
 
 export default function App() {
 
+console.log("Init Firebase", app)
+getProducts();
 
-  return(
-    
+
+
+return(
+  <CartProvider>
     <BrowserRouter>
       <NavBar />
 
@@ -22,11 +25,11 @@ export default function App() {
         <Route path='/' element={<ItemListContainer greeting="Bienvenido a Itrend Store"/>} />
         <Route path='/category/:categParam' element={<ItemListContainer/>} />
         <Route path='/detalle/:idParam' element={<ItemDetailContainer/>} />
+        <Route path='/cart' element={<CartContainer/>} />
         <Route path='*' element={<h1>404: Página no encontrada</h1>} />
       </Routes>
 
     </BrowserRouter>
-  
+  </CartProvider>
 )}
-
 
